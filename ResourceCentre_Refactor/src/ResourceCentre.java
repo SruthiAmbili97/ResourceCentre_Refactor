@@ -328,5 +328,5 @@ public class ResourceCentre {
 	}
 
 // hi
-// hi zhuo hong
+// hi zhuo hong nice
 }
