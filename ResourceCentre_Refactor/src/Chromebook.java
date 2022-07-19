@@ -1,4 +1,3 @@
-
 public class Chromebook extends Item{
 	private String os;
 
@@ -12,10 +11,9 @@ public class Chromebook extends Item{
 	}
 	
 	public String toString(){
-		String output = "";
-		// Write your codes here
+		String output = super.toString();
+		output += String.format("Asset tag: %-10s\n Description: %-10s \n Optical Zoom: %-10s", getAssetTag(), getDescription(), os);
 		return output;
 	}
 }
-
 
