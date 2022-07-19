@@ -25,16 +25,12 @@ public class ResourceCentreTest {
 	@Before
 	public void setUp() throws Exception {
 		// prepare test data
-		cc1 = new Camcorder("CC0011", "Nikon HDSLR", 40);
-		cc2 = new Camcorder("CC0012", "Sony DSC-RX100M7", 20);
-		cc3 = new Camcorder("CC0013", "panasoni DSC-RX100M7", 30);
-<<<<<<< HEAD
-		cb1 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
-=======
-		cb1 = new Chromebook("CB0011", "ASUS Chromebook", "Mac OS");
->>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
-		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
-		cb3 = new Chromebook("CB0013", "HUAWEI Magicbook 100+", "Mac 10");
+		cc1 = new Camcorder("CC001", "Nikon HDSLR", 40);
+		cc2 = new Camcorder("CC002", "Sony DSC-RX100M7", 20);
+		cc3 = new Camcorder("CC003", "panasoni DSC-RX100M7", 30);
+		cb1 = new Chromebook("CB001", "ASUS Chromebook", "Mac OS");
+		cb2 = new Chromebook("CB002", "SAMSUNG Chromebook 4+", "Win 10");
+		cb3 = new Chromebook("CB003", "HUAWEI Magicbook 100+", "Mac 10");
 		
 		
 		camcorderList= new ArrayList<Camcorder>();
@@ -98,16 +94,12 @@ public class ResourceCentreTest {
 		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
 		
 		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
-		allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
-
-<<<<<<< HEAD
+		
+		allCamcorder = ResourceCentre.retrieveAllCamcorder(camcorderList);
+		
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC001", "Nikon HDSLR", "Yes", "", 40);
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC002", "Sony DSC-RX100M7", "Yes", "", 20);
-=======
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
->>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
-	
+		
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
 	}
@@ -129,15 +121,10 @@ public class ResourceCentreTest {
 	//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
 	allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 
-<<<<<<< HEAD
-    testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB001", "ASUS Chromebook", "Yes", "", "Mac OS");
-	testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB002", "HP Chromebook", "Yes", "", "Win 10");
-			
-=======
-    testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "ASUS Chromebook", "Yes", "", "Mac OS");
-	testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
+    testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB001", "ASUS Chromebook", "Yes", "", "Mac OS");
+	testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB002", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
+   
 	
->>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 	assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
 				
 		
@@ -152,7 +139,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		
 		// normal
-		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020" );
+		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC001", "8-8-2020" );
 		assertTrue("Test if an available item is ok to loan?", ok);
 		assertFalse(camcorderList.get(0).getIsAvailable());
 		assertEquals(camcorderList.get(0).getDueDate(),"8-8-2020");
@@ -186,7 +173,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		
 		// normal
-		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
+		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB001", "8-8-2020" );
 		assertTrue("Test if an available item is ok to loan?", ok);
 		assertFalse(chromebookList.get(0).getIsAvailable());
 		assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
@@ -218,7 +205,7 @@ public class ResourceCentreTest {
 		//normal
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		cc2.setIsAvailable(false);
-		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC002");
 		assertTrue("Test if loaned out amcorder CC0012 is returned- true", isReturned);
 		//error
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
@@ -239,7 +226,7 @@ public class ResourceCentreTest {
 		//normal
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
-		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB002");
 		assertTrue("Test if loaned out chromebook CB0012 is returned- true", isReturned);
 		//error
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
