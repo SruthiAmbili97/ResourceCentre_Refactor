@@ -17,7 +17,7 @@ private int opticalZoom;
 		
 		//hi
 		// Write your codes here
-
+		//hi
 		output = String.format("%-63s %-20d", output,opticalZoom);
 		return output;
 	} //working hi
