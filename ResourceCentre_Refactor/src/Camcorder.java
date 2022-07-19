@@ -12,8 +12,12 @@ private int opticalZoom;
 	
 	public String toString(){
 		String output = super.toString();
+
 		// Write your codes test
 		
+
+		// Write your codes here
+
 		output = String.format("%-63s %-20d", output,opticalZoom);
 		return output;
 	} //working hi

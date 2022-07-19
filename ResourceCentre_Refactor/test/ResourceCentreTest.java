@@ -28,7 +28,11 @@ public class ResourceCentreTest {
 		cc1 = new Camcorder("CC0011", "Nikon HDSLR", 40);
 		cc2 = new Camcorder("CC0012", "Sony DSC-RX100M7", 20);
 		cc3 = new Camcorder("CC0013", "panasoni DSC-RX100M7", 30);
+<<<<<<< HEAD
 		cb1 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
+=======
+		cb1 = new Chromebook("CB0011", "ASUS Chromebook", "Mac OS");
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
 		cb3 = new Chromebook("CB0013", "HUAWEI Magicbook 100+", "Mac 10");
 		
@@ -96,8 +100,13 @@ public class ResourceCentreTest {
 		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
 		allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
 
+<<<<<<< HEAD
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC001", "Nikon HDSLR", "Yes", "", 40);
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC002", "Sony DSC-RX100M7", "Yes", "", 20);
+=======
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 	
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
@@ -120,9 +129,15 @@ public class ResourceCentreTest {
 	//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
 	allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 
+<<<<<<< HEAD
     testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB001", "ASUS Chromebook", "Yes", "", "Mac OS");
 	testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB002", "HP Chromebook", "Yes", "", "Win 10");
 			
+=======
+    testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "ASUS Chromebook", "Yes", "", "Mac OS");
+	testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
+	
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 	assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
 				
 		
@@ -239,7 +254,7 @@ public class ResourceCentreTest {
 		cb2 = null;
 		camcorderList = null;
 		chromebookList = null;
-
+//test ash nice
 	}
 
 }

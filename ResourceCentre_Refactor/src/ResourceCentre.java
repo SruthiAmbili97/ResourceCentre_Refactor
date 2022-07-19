@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class ResourceCentre {
 
+<<<<<<< HEAD
 
 	private static final int OPTION_QUIT = 5;
 	private static final int OPTION_VIEW = 1;
@@ -14,6 +15,18 @@ public class ResourceCentre {
 		System.out.println("2. Chromebook");
 	}
 
+=======
+	private static final int OPTION_QUIT = 5;
+	private static final int OPTION_VIEW = 1;
+	private static final int OPTION_ADD = 2;
+	private static final int OPTION_LOAN = 3;
+	private static final int OPTION_RETURN = 4;
+	public static void itemTypeMenu() {
+		ResourceCentre.setHeader("ITEM TYPES");
+		System.out.println("1. Camcorder");
+		System.out.println("2. Chromebook");
+	}
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 	public static void main(String[] args) {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
@@ -137,10 +150,14 @@ public class ResourceCentre {
 
 		for (int i = 0; i < camcorderList.size(); i++) {
 
+<<<<<<< HEAD
 			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", camcorderList.get(i).getAssetTag().toString(),
 					camcorderList.get(i).getDescription(), 
 					ResourceCentre.showAvailability(camcorderList.get(i).getIsAvailable()),
 					camcorderList.get(i).getDueDate(),camcorderList.get(i).getOpticalZoom());
+=======
+			output += String.format("%-84s\n", camcorderList.get(i).toString());
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 		}
 		return output;
 	}
@@ -273,7 +290,11 @@ public class ResourceCentre {
 
 		for (int i = 0; i < camcorderList.size(); i++) {
 			String assetTag = camcorderList.get(i).getAssetTag();
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 			if (tag.equalsIgnoreCase(assetTag)
 					&& camcorderList.get(i).getIsAvailable() == false) {
 				camcorderList.get(i).setIsAvailable(true);
@@ -304,7 +325,11 @@ public class ResourceCentre {
 		
 		for (int i = 0; i < chromebookList.size(); i++) {
 			String assetTag = chromebookList.get(i).getAssetTag();
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 			if (tag.equalsIgnoreCase(assetTag)
 					&& chromebookList.get(i).getIsAvailable() == false) {
 				chromebookList.get(i).setIsAvailable(true);
@@ -331,5 +356,9 @@ public class ResourceCentre {
 	}
 
 // hi
+<<<<<<< HEAD
 // hi zhuo hong nice
+=======
+// hi zhuo hong nice how r u
+>>>>>>> branch 'master' of https://github.com/SruthiAmbili97/ResourceCentre_Refactor.git
 }
